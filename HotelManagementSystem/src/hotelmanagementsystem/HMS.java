@@ -40,7 +40,6 @@ public class HMS extends javax.swing.JFrame {
         jLabel2.setText("Hotel Management System");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMaximumSize(new java.awt.Dimension(500, 331));
         setMinimumSize(new java.awt.Dimension(500, 331));
         setName("Welcome Screen"); // NOI18N
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -59,7 +58,7 @@ public class HMS extends javax.swing.JFrame {
         });
         getContentPane().add(Next, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 270, 70, 30));
 
-        Background.setIcon(new javax.swing.ImageIcon("D:\\New folder\\4th Sem\\DBMS\\Course Project\\HotelManagementSystem\\src\\hotelmanagementsystem\\img\\home-11.jpg")); // NOI18N
+        Background.setIcon(new javax.swing.ImageIcon("D:\\New folder\\4th Sem\\DBMS\\Course Project\\HotelManagementSystem\\src\\hotelmanagementsystem\\img\\home.jpg")); // NOI18N
         getContentPane().add(Background, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 500, 320));
 
         pack();
