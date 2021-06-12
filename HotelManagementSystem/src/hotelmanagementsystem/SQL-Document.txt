@@ -1,0 +1,18 @@
+DDL Statements:-
+SQL> create table LOGIN(Username varchar2(20), Password varchar2(20),
+  2  constraint PK_Username primary key(Username));
+Table created.
+
+SQL> insert into LOGIN values('&user','&password');
+Enter value for user: Admin
+Enter value for password: 12345
+old   1: insert into LOGIN values('&user','&password')
+new   1: insert into LOGIN values('Admin','12345')
+1 row created.
+
+SQL> select * from LOGIN;
+USERNAME             PASSWORD
+-------------------- --------------------
+Admin                12345
+
+
