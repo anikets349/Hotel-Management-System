@@ -15,4 +15,9 @@ USERNAME             PASSWORD
 -------------------- --------------------
 Admin                12345
 
+SQL> create table EMPLOYEEC(EID char(10),Name varchar2(40) not null, DOB date, Gender char, Job varchar2(20),
+  2  Salary float, PhoneNum int,
+  3  constraint PK_EID primary key(EID));
+Table created.
+
 

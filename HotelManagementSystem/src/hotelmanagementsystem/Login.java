@@ -156,16 +156,17 @@ public class Login extends javax.swing.JFrame {
         try{
             ResultSet res = con.stm.executeQuery(query);
             if(res.next()){
-                new HMS().setVisible(true);
+                new Dashboard().setVisible(true);
                 this.setVisible(false);
             }
             else{
+                UsernameField.setText("");
+                PasswordField.setText("");
                 JOptionPane.showMessageDialog(this, errorMsg);
-                this.setVisible(false);
             }
         }
         catch(Exception e){
-            System.out.println(e.getMessage());
+            JOptionPane.showMessageDialog(this, e.getMessage());
         }
     }//GEN-LAST:event_LoginBtnActionPerformed
 
