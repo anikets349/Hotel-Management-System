@@ -18,7 +18,7 @@ public class AddRoom extends javax.swing.JFrame {
      */
     public AddRoom() {
         setTitle("Admin | Add Room");
-        setLocation(500,250);
+        setLocation(400,250);
         initComponents();
     }
 

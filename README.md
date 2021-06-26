@@ -1,5 +1,5 @@
 # Course project for DBMS (18CS43)
-## This project is a Hotel Management System built using Java programming Language and uses Oracle as the database.
+## This project is a Hotel Management System built using Java programming Language which uses Oracle as the database.
 ## Group members:-
 | Sl. No. | Name | USN |
 | ---- | ---- | ---- |

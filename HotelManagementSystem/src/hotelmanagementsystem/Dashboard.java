@@ -102,10 +102,13 @@ public class Dashboard extends javax.swing.JFrame {
 
     private void Menu1Item1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Menu1Item1ActionPerformed
         // TODO add your handling code here:
+        this.setVisible(false);
+        new Reception().setVisible(true);
     }//GEN-LAST:event_Menu1Item1ActionPerformed
 
     private void AddRoomActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddRoomActionPerformed
         // TODO add your handling code here:
+        
         new AddRoom().setVisible(true);
     }//GEN-LAST:event_AddRoomActionPerformed
 
