@@ -39,10 +39,9 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="JobField" alignment="0" min="-2" pref="106" max="-2" attributes="0"/>
                           <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
-                              <Component id="IDField" alignment="0" max="32767" attributes="0"/>
+                              <Component id="IDField" alignment="0" pref="148" max="32767" attributes="0"/>
                               <Component id="PhoneField" alignment="0" max="32767" attributes="0"/>
                               <Component id="SalaryField" alignment="0" max="32767" attributes="0"/>
-                              <Component id="AddButton" alignment="0" pref="148" max="32767" attributes="0"/>
                           </Group>
                           <Group type="102" attributes="0">
                               <Component id="GenderMale" min="-2" pref="93" max="-2" attributes="0"/>
@@ -56,8 +55,13 @@
                       </Group>
                   </Group>
                   <Component id="Name" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Group type="102" alignment="0" attributes="0">
+                      <Component id="AddButton" min="-2" pref="148" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
+                      <Component id="CancelButton" min="-2" pref="130" max="-2" attributes="0"/>
+                  </Group>
               </Group>
-              <EmptySpace pref="138" max="32767" attributes="0"/>
+              <EmptySpace pref="89" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
                       <Component id="Picture" min="-2" max="-2" attributes="0"/>
@@ -121,7 +125,10 @@
                           <Component id="ID" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="AddButton" min="-2" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="AddButton" max="32767" attributes="0"/>
+                          <Component id="CancelButton" max="32767" attributes="0"/>
+                      </Group>
                   </Group>
                   <Component id="Picture" alignment="0" min="-2" pref="261" max="-2" attributes="0"/>
               </Group>
@@ -245,6 +252,17 @@
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
       </AuxValues>
+    </Component>
+    <Component class="javax.swing.JButton" name="CancelButton">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Segoe UI" size="12" style="1"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Cancel"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CancelButtonActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>

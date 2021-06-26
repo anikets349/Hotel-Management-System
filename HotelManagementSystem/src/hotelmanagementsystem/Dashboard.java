@@ -35,9 +35,9 @@ public class Dashboard extends javax.swing.JFrame {
         Menu1 = new javax.swing.JMenu();
         Menu1Item1 = new javax.swing.JMenuItem();
         Menu2 = new javax.swing.JMenu();
-        Menu2Item1 = new javax.swing.JMenuItem();
-        Menu2Item2 = new javax.swing.JMenuItem();
-        Menu2Item3 = new javax.swing.JMenuItem();
+        AddEmployee = new javax.swing.JMenuItem();
+        AddRoom = new javax.swing.JMenuItem();
+        AddDriver = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -69,29 +69,29 @@ public class Dashboard extends javax.swing.JFrame {
             }
         });
 
-        Menu2Item1.setText("Add Employee");
-        Menu2Item1.addActionListener(new java.awt.event.ActionListener() {
+        AddEmployee.setText("Add Employee");
+        AddEmployee.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Menu2Item1ActionPerformed(evt);
+                AddEmployeeActionPerformed(evt);
             }
         });
-        Menu2.add(Menu2Item1);
+        Menu2.add(AddEmployee);
 
-        Menu2Item2.setText("Add Room");
-        Menu2Item2.addActionListener(new java.awt.event.ActionListener() {
+        AddRoom.setText("Add Room");
+        AddRoom.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Menu2Item2ActionPerformed(evt);
+                AddRoomActionPerformed(evt);
             }
         });
-        Menu2.add(Menu2Item2);
+        Menu2.add(AddRoom);
 
-        Menu2Item3.setText("Add Driver");
-        Menu2Item3.addActionListener(new java.awt.event.ActionListener() {
+        AddDriver.setText("Add Driver");
+        AddDriver.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Menu2Item3ActionPerformed(evt);
+                AddDriverActionPerformed(evt);
             }
         });
-        Menu2.add(Menu2Item3);
+        Menu2.add(AddDriver);
 
         MenuBar.add(Menu2);
 
@@ -104,23 +104,24 @@ public class Dashboard extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_Menu1Item1ActionPerformed
 
-    private void Menu2Item2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Menu2Item2ActionPerformed
+    private void AddRoomActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddRoomActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_Menu2Item2ActionPerformed
+        new AddRoom().setVisible(true);
+    }//GEN-LAST:event_AddRoomActionPerformed
 
-    private void Menu2Item3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Menu2Item3ActionPerformed
+    private void AddDriverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddDriverActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_Menu2Item3ActionPerformed
+    }//GEN-LAST:event_AddDriverActionPerformed
 
     private void Menu2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Menu2ActionPerformed
         // TODO add your handling code here:
         
     }//GEN-LAST:event_Menu2ActionPerformed
 
-    private void Menu2Item1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Menu2Item1ActionPerformed
+    private void AddEmployeeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddEmployeeActionPerformed
         // TODO add your handling code here:
         new AddEmployee().setVisible(true);
-    }//GEN-LAST:event_Menu2Item1ActionPerformed
+    }//GEN-LAST:event_AddEmployeeActionPerformed
 
     /**
      * @param args the command line arguments
@@ -158,13 +159,13 @@ public class Dashboard extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenuItem AddDriver;
+    private javax.swing.JMenuItem AddEmployee;
+    private javax.swing.JMenuItem AddRoom;
     private javax.swing.JLabel Background;
     private javax.swing.JMenu Menu1;
     private javax.swing.JMenuItem Menu1Item1;
     private javax.swing.JMenu Menu2;
-    private javax.swing.JMenuItem Menu2Item1;
-    private javax.swing.JMenuItem Menu2Item2;
-    private javax.swing.JMenuItem Menu2Item3;
     private javax.swing.JMenuBar MenuBar;
     private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
