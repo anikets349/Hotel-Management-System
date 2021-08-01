@@ -3,14 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/D:/New%20folder/4th%20Sem/DBMS/Course%20Project/HotelManagementSystem/src/hotelmanagementsystem/Login.java</file>
-            <file>file:/D:/New%20folder/4th%20Sem/DBMS/Course%20Project/HotelManagementSystem/src/hotelmanagementsystem/Dashboard.java</file>
-            <file>file:/D:/New%20folder/4th%20Sem/DBMS/Course%20Project/HotelManagementSystem/src/hotelmanagementsystem/Conn.java</file>
             <file>file:/D:/New%20folder/4th%20Sem/DBMS/Course%20Project/HotelManagementSystem/src/hotelmanagementsystem/EmployeeInfo.java</file>
-            <file>file:/D:/New%20folder/4th%20Sem/DBMS/Course%20Project/HotelManagementSystem/src/hotelmanagementsystem/HMS.java</file>
-            <file>file:/D:/New%20folder/4th%20Sem/DBMS/Course%20Project/HotelManagementSystem/src/hotelmanagementsystem/AddEmployee.java</file>
+            <file>file:/D:/New%20folder/4th%20Sem/DBMS/Course%20Project/HotelManagementSystem/src/hotelmanagementsystem/ManagerInfo.java</file>
             <file>file:/D:/New%20folder/4th%20Sem/DBMS/Course%20Project/HotelManagementSystem/src/hotelmanagementsystem/Reception.java</file>
-            <file>file:/D:/New%20folder/4th%20Sem/DBMS/Course%20Project/HotelManagementSystem/src/hotelmanagementsystem/AddRoom.java</file>
+            <file>file:/D:/New%20folder/4th%20Sem/DBMS/Course%20Project/HotelManagementSystem/src/hotelmanagementsystem/RoomInfo.java</file>
         </group>
     </open-files>
 </project-private>

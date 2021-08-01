@@ -5,27 +5,28 @@
  */
 package hotelmanagementsystem;
 
+import java.sql.ResultSet;
 import javax.swing.JOptionPane;
-import java.sql.*;
-import net.proteanit.sql.*;
+import net.proteanit.sql.DbUtils;
+
 /**
  *
  * @author Aniket
  */
-public class EmployeeInfo extends javax.swing.JFrame {
+public class RoomInfo extends javax.swing.JFrame {
 
     /**
-     * Creates new form EmployeeInfo
+     * Creates new form RoomInfo
      */
-    public EmployeeInfo() {
-        setTitle("Reception | Employee Information");
+    public RoomInfo() {
+        setTitle("Reception | Room Information");
         setLocation(400,250);
         initComponents();
         try{
             Conn con = new Conn();
-            String query = "select * from c##aniket.EMPLOYEEC";
+            String query = "select * from c##aniket.ROOMC";
             ResultSet r = con.stm.executeQuery(query);
-            Employee.setModel(DbUtils.resultSetToTableModel(r));
+            RoomTable.setModel(DbUtils.resultSetToTableModel(r));
         }
         catch(Exception e){
             JOptionPane.showMessageDialog(this, e.getMessage());
@@ -41,27 +42,14 @@ public class EmployeeInfo extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jScrollPane1 = new javax.swing.JScrollPane();
-        Employee = new javax.swing.JTable();
-        Header = new javax.swing.JLabel();
         BackBtn = new javax.swing.JButton();
+        Header = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        RoomTable = new javax.swing.JTable();
+        Background = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
-        Employee.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        Employee.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-
-            },
-            new String [] {
-                "Employee ID", "Name", "DOB", "Gender", "Job", "Salary", "Contact No."
-            }
-        ));
-        jScrollPane1.setViewportView(Employee);
-
-        Header.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        Header.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Header.setText("EMPLOYEE DETAILS");
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         BackBtn.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         BackBtn.setText("←");
@@ -71,29 +59,30 @@ public class EmployeeInfo extends javax.swing.JFrame {
                 BackBtnActionPerformed(evt);
             }
         });
+        getContentPane().add(BackBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 11, 55, 22));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(BackBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(185, 185, 185)
-                .addComponent(Header, javax.swing.GroupLayout.PREFERRED_SIZE, 244, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(217, Short.MAX_VALUE))
-            .addComponent(jScrollPane1)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(Header, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(BackBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 254, Short.MAX_VALUE))
-        );
+        Header.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        Header.setText("Room Information");
+        getContentPane().add(Header, new org.netbeans.lib.awtextra.AbsoluteConstraints(307, 11, -1, -1));
+
+        RoomTable.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane1.setViewportView(RoomTable);
+
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 80, 777, 200));
+
+        Background.setIcon(new javax.swing.ImageIcon("D:\\New folder\\4th Sem\\DBMS\\Course Project\\HotelManagementSystem\\src\\hotelmanagementsystem\\img\\roomInfo.jpg")); // NOI18N
+        Background.setText("jLabel1");
+        getContentPane().add(Background, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 780, 380));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -121,28 +110,29 @@ public class EmployeeInfo extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(EmployeeInfo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(RoomInfo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(EmployeeInfo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(RoomInfo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(EmployeeInfo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(RoomInfo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(EmployeeInfo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(RoomInfo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new EmployeeInfo().setVisible(true);
+                new RoomInfo().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BackBtn;
-    private javax.swing.JTable Employee;
+    private javax.swing.JLabel Background;
     private javax.swing.JLabel Header;
+    private javax.swing.JTable RoomTable;
     private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
 }
