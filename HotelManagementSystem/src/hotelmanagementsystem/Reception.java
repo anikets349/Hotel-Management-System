@@ -30,17 +30,16 @@ public class Reception extends javax.swing.JFrame {
     private void initComponents() {
 
         empInfo = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
         mgrInfo = new javax.swing.JButton();
         jButton7 = new javax.swing.JButton();
         jButton8 = new javax.swing.JButton();
-        jButton9 = new javax.swing.JButton();
         jButton10 = new javax.swing.JButton();
         jButton11 = new javax.swing.JButton();
         jButton12 = new javax.swing.JButton();
         jButton14 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jButton6 = new javax.swing.JButton();
         jButton13 = new javax.swing.JButton();
@@ -54,11 +53,7 @@ public class Reception extends javax.swing.JFrame {
                 empInfoActionPerformed(evt);
             }
         });
-        getContentPane().add(empInfo, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, -1, -1));
-
-        jButton2.setBackground(new java.awt.Color(255, 255, 255));
-        jButton2.setText("New Customer Form");
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 15, 141, -1));
+        getContentPane().add(empInfo, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 40, -1, -1));
 
         jButton3.setText("Book Room");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
@@ -66,10 +61,15 @@ public class Reception extends javax.swing.JFrame {
                 jButton3ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 44, 141, -1));
+        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 141, -1));
 
         jButton5.setText("Customer Information");
-        getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 140, -1, -1));
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 110, -1, -1));
 
         mgrInfo.setText("Manager Information");
         mgrInfo.addActionListener(new java.awt.event.ActionListener() {
@@ -77,7 +77,7 @@ public class Reception extends javax.swing.JFrame {
                 mgrInfoActionPerformed(evt);
             }
         });
-        getContentPane().add(mgrInfo, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 110, 141, -1));
+        getContentPane().add(mgrInfo, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, 141, -1));
 
         jButton7.setText("Checkout");
         getContentPane().add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 214, 141, -1));
@@ -85,14 +85,11 @@ public class Reception extends javax.swing.JFrame {
         jButton8.setText("Update Check Status");
         getContentPane().add(jButton8, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 248, 141, -1));
 
-        jButton9.setText("Update Room Status");
-        getContentPane().add(jButton9, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 282, 141, -1));
-
         jButton10.setText("Pickup/Drop");
-        getContentPane().add(jButton10, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 316, 141, -1));
+        getContentPane().add(jButton10, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 290, 141, -1));
 
         jButton11.setText("Search Room");
-        getContentPane().add(jButton11, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 350, 141, -1));
+        getContentPane().add(jButton11, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 330, 141, -1));
 
         jButton12.setText("Go Back");
         jButton12.addActionListener(new java.awt.event.ActionListener() {
@@ -100,7 +97,7 @@ public class Reception extends javax.swing.JFrame {
                 jButton12ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton12, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 384, 141, -1));
+        getContentPane().add(jButton12, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 370, 141, -1));
 
         jButton14.setText("Room Information");
         jButton14.addActionListener(new java.awt.event.ActionListener() {
@@ -108,7 +105,15 @@ public class Reception extends javax.swing.JFrame {
                 jButton14ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton14, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 173, 140, 30));
+        getContentPane().add(jButton14, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 140, 140, 30));
+
+        jButton2.setText("Update Room Status");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 180, 140, -1));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hotelmanagementsystem/img/reception-1.jpg"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 700, 430));
@@ -134,6 +139,8 @@ public class Reception extends javax.swing.JFrame {
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
+        this.setVisible(false);
+        new NewCustomer().setVisible(true);
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton12ActionPerformed
@@ -150,6 +157,7 @@ public class Reception extends javax.swing.JFrame {
 
     private void mgrInfoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mgrInfoActionPerformed
         // TODO add your handling code here:
+        this.setVisible(false);
         new ManagerInfo().setVisible(true);
     }//GEN-LAST:event_mgrInfoActionPerformed
 
@@ -163,7 +171,21 @@ public class Reception extends javax.swing.JFrame {
 
     private void jButton14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton14ActionPerformed
         // TODO add your handling code here:
+        this.setVisible(false);
+        new RoomInfo().setVisible(true);
     }//GEN-LAST:event_jButton14ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        this.setVisible(false);
+        new UpdateRoom().setVisible(true);
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        // TODO add your handling code here:
+        this.setVisible(false);
+        new CustomerInfo().setVisible(true);
+    }//GEN-LAST:event_jButton5ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -213,7 +235,6 @@ public class Reception extends javax.swing.JFrame {
     private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton8;
-    private javax.swing.JButton jButton9;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JButton mgrInfo;
     // End of variables declaration//GEN-END:variables

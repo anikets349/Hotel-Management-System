@@ -13,20 +13,20 @@ import net.proteanit.sql.DbUtils;
  *
  * @author Aniket
  */
-public class RoomInfo extends javax.swing.JFrame {
+public class CustomerInfo extends javax.swing.JFrame {
 
     /**
-     * Creates new form RoomInfo
+     * Creates new form CustomerInfo
      */
-    public RoomInfo() {
-        setTitle("Reception | Room Information");
+    public CustomerInfo() {
+        setTitle("Reception | Customer Information");
         setLocation(400,250);
         initComponents();
         try{
             Conn con = new Conn();
-            String query = "select * from c##aniket.ROOMC";
+            String query = "select * from c##aniket.CUSTOMERC";
             ResultSet r = con.stm.executeQuery(query);
-            RoomTable.setModel(DbUtils.resultSetToTableModel(r));
+            Customer.setModel(DbUtils.resultSetToTableModel(r));
         }
         catch(Exception e){
             JOptionPane.showMessageDialog(this, e.getMessage());
@@ -42,14 +42,16 @@ public class RoomInfo extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        BackBtn = new javax.swing.JButton();
         Header = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        RoomTable = new javax.swing.JTable();
-        Background = new javax.swing.JLabel();
+        BackBtn = new javax.swing.JButton();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        Customer = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        setBounds(new java.awt.Rectangle(400, 250, 550, 500));
+
+        Header.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        Header.setText("CUSTOMER INFORMATION");
 
         BackBtn.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         BackBtn.setText("←");
@@ -59,13 +61,8 @@ public class RoomInfo extends javax.swing.JFrame {
                 BackBtnActionPerformed(evt);
             }
         });
-        getContentPane().add(BackBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 11, 55, 22));
 
-        Header.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        Header.setText("Room Information");
-        getContentPane().add(Header, new org.netbeans.lib.awtextra.AbsoluteConstraints(307, 11, -1, -1));
-
-        RoomTable.setModel(new javax.swing.table.DefaultTableModel(
+        Customer.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -76,13 +73,30 @@ public class RoomInfo extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        jScrollPane1.setViewportView(RoomTable);
+        jScrollPane3.setViewportView(Customer);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 80, 760, 200));
-
-        Background.setIcon(new javax.swing.ImageIcon("D:\\New folder\\4th Sem\\DBMS\\Course Project\\HotelManagementSystem\\src\\hotelmanagementsystem\\img\\roomInfo.jpg")); // NOI18N
-        Background.setText("jLabel1");
-        getContentPane().add(Background, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 780, 380));
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(BackBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(140, 140, 140)
+                .addComponent(Header)
+                .addContainerGap(261, Short.MAX_VALUE))
+            .addComponent(jScrollPane3)
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Header)
+                    .addComponent(BackBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 314, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -110,29 +124,28 @@ public class RoomInfo extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(RoomInfo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CustomerInfo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(RoomInfo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CustomerInfo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(RoomInfo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CustomerInfo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(RoomInfo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CustomerInfo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new RoomInfo().setVisible(true);
+                new CustomerInfo().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BackBtn;
-    private javax.swing.JLabel Background;
+    private javax.swing.JTable Customer;
     private javax.swing.JLabel Header;
-    private javax.swing.JTable RoomTable;
-    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane3;
     // End of variables declaration//GEN-END:variables
 }
