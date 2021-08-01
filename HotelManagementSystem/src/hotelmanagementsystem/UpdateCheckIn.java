@@ -71,6 +71,7 @@ public class UpdateCheckIn extends javax.swing.JFrame {
         jButton2 = new javax.swing.JButton();
         jLabel8 = new javax.swing.JLabel();
         amtBeingPaid = new javax.swing.JTextField();
+        BackBtn = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -80,7 +81,7 @@ public class UpdateCheckIn extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel1.setText("CUSTOMER CHECK-IN STATUS");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 10, 240, -1));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 10, 240, -1));
 
         jLabel2.setText("Customer ID");
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, -1, -1));
@@ -139,6 +140,16 @@ public class UpdateCheckIn extends javax.swing.JFrame {
 
         amtBeingPaid.setColumns(3);
         getContentPane().add(amtBeingPaid, new org.netbeans.lib.awtextra.AbsoluteConstraints(204, 187, 60, -1));
+
+        BackBtn.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        BackBtn.setText("←");
+        BackBtn.setOpaque(false);
+        BackBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BackBtnActionPerformed(evt);
+            }
+        });
+        getContentPane().add(BackBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -199,6 +210,12 @@ public class UpdateCheckIn extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jButton2ActionPerformed
 
+    private void BackBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BackBtnActionPerformed
+        // TODO add your handling code here:
+        this.setVisible(false);
+        new Reception().setVisible(true);
+    }//GEN-LAST:event_BackBtnActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -235,6 +252,7 @@ public class UpdateCheckIn extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton BackBtn;
     private javax.swing.JLabel Background;
     private javax.swing.JTextField amtBal;
     private javax.swing.JTextField amtBeingPaid;
