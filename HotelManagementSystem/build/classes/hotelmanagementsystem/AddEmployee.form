@@ -240,12 +240,13 @@
     <Component class="javax.swing.JComboBox" name="JobField">
       <Properties>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-          <StringArray count="5">
+          <StringArray count="6">
             <StringItem index="0" value="Reception"/>
             <StringItem index="1" value="Waiter"/>
             <StringItem index="2" value="Cook"/>
             <StringItem index="3" value="House Keeping"/>
             <StringItem index="4" value="Safety"/>
+            <StringItem index="5" value="Driver"/>
           </StringArray>
         </Property>
       </Properties>

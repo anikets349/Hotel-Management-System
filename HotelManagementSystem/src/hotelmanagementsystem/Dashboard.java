@@ -37,7 +37,6 @@ public class Dashboard extends javax.swing.JFrame {
         Menu2 = new javax.swing.JMenu();
         AddEmployee = new javax.swing.JMenuItem();
         AddRoom = new javax.swing.JMenuItem();
-        AddDriver = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -85,14 +84,6 @@ public class Dashboard extends javax.swing.JFrame {
         });
         Menu2.add(AddRoom);
 
-        AddDriver.setText("Add Driver");
-        AddDriver.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                AddDriverActionPerformed(evt);
-            }
-        });
-        Menu2.add(AddDriver);
-
         MenuBar.add(Menu2);
 
         setJMenuBar(MenuBar);
@@ -111,10 +102,6 @@ public class Dashboard extends javax.swing.JFrame {
         
         new AddRoom().setVisible(true);
     }//GEN-LAST:event_AddRoomActionPerformed
-
-    private void AddDriverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddDriverActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_AddDriverActionPerformed
 
     private void Menu2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Menu2ActionPerformed
         // TODO add your handling code here:
@@ -162,7 +149,6 @@ public class Dashboard extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JMenuItem AddDriver;
     private javax.swing.JMenuItem AddEmployee;
     private javax.swing.JMenuItem AddRoom;
     private javax.swing.JLabel Background;

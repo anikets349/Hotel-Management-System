@@ -99,7 +99,7 @@ public class AddEmployee extends javax.swing.JFrame {
 
         GenderFemale.setText("Female");
 
-        JobField.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Reception", "Waiter", "Cook", "House Keeping", "Safety" }));
+        JobField.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Reception", "Waiter", "Cook", "House Keeping", "Safety", "Driver" }));
 
         CancelButton.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         CancelButton.setText("Cancel");
