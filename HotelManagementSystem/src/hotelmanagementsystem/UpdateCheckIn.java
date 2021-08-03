@@ -32,7 +32,7 @@ public class UpdateCheckIn extends javax.swing.JFrame {
         amtBeingPaid.setEditable(false);
         try{
             Conn con = new Conn();
-            String query = "select ID_No from c##aniket.CUSTOMERC";
+            String query = "select * from c##aniket.CUSTOMERC where not exists (select * from c##aniket.BOOKINGC where CustID=ID_No)";
             ResultSet rs = con.stm.executeQuery(query);
             while(rs.next()){
                 custID.addItem(rs.getString("ID_No"));

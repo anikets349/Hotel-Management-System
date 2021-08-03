@@ -8,6 +8,7 @@ package hotelmanagementsystem;
 import java.util.Date;
 import java.sql.*;
 import javax.swing.JOptionPane;
+import java.time.LocalDateTime;  
 import java.text.DateFormat;
 import com.toedter.calendar.JDateChooser;
 import java.text.SimpleDateFormat;
@@ -221,15 +222,19 @@ public class NewCustomer extends javax.swing.JFrame {
             int occupants = Integer.valueOf((String)numOcc.getSelectedItem());
             
             
-            DateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy"); 
+            DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy"); 
             Date date = datePicker.getDate();
             String strDate = dateFormat.format(date);
+            
+            DateFormat timeFormat = new SimpleDateFormat("kk:mm:ss");
+            String time = timeFormat.format(new Date());
            
+            
+            
             int depAmt = Integer.parseInt(depositAmt.getText());
             
             Conn con = new Conn();
-            //String query = "insert into c##aniket.CUSTOMERC values('"+IDType+"','"+id+"','"+name+"',"+age+",'"+gender+"',"+rNo+",to_date('"+date+"','dd-mm-yyyy'),"+occupants+","+depAmt+")";
-            String query = "insert into c##aniket.CUSTOMERC values('"+IDType+"','"+id+"','"+name+"',"+age+",'"+gender+"',"+rNo+",to_date('"+strDate+"','mm-dd-yyyy'),"+occupants+","+depAmt+")";
+            String query = "insert into c##aniket.CUSTOMERC values('"+IDType+"','"+id+"','"+name+"',"+age+",'"+gender+"',"+rNo+",to_date('"+strDate+" "+time+"','dd/mm/yyyy hh24:mi:ss'),"+occupants+","+depAmt+")";
             String query1 = "update c##aniket.ROOMC set AVAILABILITY='N' where ROOM_NO="+rNo;
             try{
                 con.stm.executeQuery(query);

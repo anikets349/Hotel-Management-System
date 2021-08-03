@@ -37,6 +37,7 @@ public class Dashboard extends javax.swing.JFrame {
         Menu2 = new javax.swing.JMenu();
         AddEmployee = new javax.swing.JMenuItem();
         AddRoom = new javax.swing.JMenuItem();
+        jMenuItem1 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -84,6 +85,14 @@ public class Dashboard extends javax.swing.JFrame {
         });
         Menu2.add(AddRoom);
 
+        jMenuItem1.setText("Add Vehicle");
+        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem1ActionPerformed(evt);
+            }
+        });
+        Menu2.add(jMenuItem1);
+
         MenuBar.add(Menu2);
 
         setJMenuBar(MenuBar);
@@ -112,6 +121,11 @@ public class Dashboard extends javax.swing.JFrame {
         // TODO add your handling code here:
         new AddEmployee().setVisible(true);
     }//GEN-LAST:event_AddEmployeeActionPerformed
+
+    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+        // TODO add your handling code here:
+        new AddVehicle().setVisible(true);
+    }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -157,5 +171,6 @@ public class Dashboard extends javax.swing.JFrame {
     private javax.swing.JMenu Menu2;
     private javax.swing.JMenuBar MenuBar;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JMenuItem jMenuItem1;
     // End of variables declaration//GEN-END:variables
 }

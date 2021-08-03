@@ -206,7 +206,7 @@ public class AddEmployee extends javax.swing.JFrame {
         // TODO add your handling code here:
         String name = NameField.getText();
         
-        DateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy"); 
+        DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy"); 
         Date date = datePicker.getDate();
         String dob = dateFormat.format(date);
         
