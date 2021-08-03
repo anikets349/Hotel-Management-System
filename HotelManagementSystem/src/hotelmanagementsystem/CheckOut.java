@@ -27,15 +27,15 @@ public class CheckOut extends javax.swing.JFrame {
         cout.setDate(new Date());
         try{
             Conn c = new Conn();
-            ResultSet rs = c.stm.executeQuery("select * from c##aniket.customerc");
+            ResultSet rs = c.stm.executeQuery("select * from c##aniket.CUSTOMERC where not exists (select * from c##aniket.BOOKINGC where ID_NO=CustID)");
             while(rs.next()){
                 c1.add(rs.getString(2));
             }
             rs.close();
-        }catch  (Exception e){}
-        
-        
-        
+        }
+        catch  (Exception e){
+            JOptionPane.showMessageDialog(this, e.getMessage());
+        }
     }
 
     /**
@@ -136,8 +136,8 @@ public class CheckOut extends javax.swing.JFrame {
         String room = t1.getText();
         String custid = (String)c1.getSelectedItem();
         String checkin = cin.getText();
-        System.out.println(checkin);
-        String indate = checkin.substring(0,10);
+        
+        String indate = checkin.substring(0,19);
         
         DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy"); 
         Date date = cout.getDate();
@@ -147,14 +147,17 @@ public class CheckOut extends javax.swing.JFrame {
         DateFormat timeFormat = new SimpleDateFormat("kk:mm:ss");
         String time = timeFormat.format(new Date());
         
-        System.out.println(room );
-        System.out.println(custid );
+        System.out.println(room);
+        System.out.println(custid);
+        System.out.println(checkin);
         System.out.println(indate);
         System.out.println(checkout);
         Conn con = new Conn();
 
+        //String query = "insert into c##aniket.BOOKINGC values("+room+",'"+custid+"',to_date('"+indate+"','yyyy-mm-dd hh24:mi:ss'),to_date('"+checkout+" "+time+"','dd/mm/yyyy hh24:mi:ss'))";
         String query = "insert into c##aniket.BOOKINGC values("+room+",'"+custid+"',to_date('"+indate+"','yyyy-mm-dd hh24:mi:ss'),to_date('"+checkout+" "+time+"','dd/mm/yyyy hh24:mi:ss'))";
         String query1 = "update c##aniket.roomc set AVAILABILITY='Y', CLEANING_STATUS='Dirty' where ROOM_NO="+room;
+        
         try{
             con.stm.executeQuery(query1);
             con.stm.executeQuery(query);
@@ -165,11 +168,13 @@ public class CheckOut extends javax.swing.JFrame {
         catch(Exception ae){
             JOptionPane.showMessageDialog(this, ae.getMessage());
         }
-            /*String query = "insert into c##aniket.bookingc values("+room+",'"+custid+"',to_date('"+checkin+"','dd-mm-yyyy'),to_date('"+checkout+"','mm-dd-yyyy'))";
+            /*
+            String query = "insert into c##aniket.bookingc values("+room+",'"+custid+"',to_date('"+checkin+"','dd-mm-yyyy'),to_date('"+checkout+"','mm-dd-yyyy'))";
             c.stm.executeQuery(query);
             String query1 = "update c##aniket.roomc set AVAILABILITY='Y' and Cleaning_Status='Dirty' where roomno="+room;
             c.stm.executeQuery(query1);
-            JOptionPane.showMessageDialog(this,"Check Out Successful");   */  
+            JOptionPane.showMessageDialog(this,"Check Out Successful"); 
+            */
         
     }//GEN-LAST:event_CheckoutActionPerformed
 
