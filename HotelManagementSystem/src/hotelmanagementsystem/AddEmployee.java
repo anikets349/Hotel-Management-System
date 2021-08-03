@@ -5,8 +5,10 @@
  */
 package hotelmanagementsystem;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import javax.swing.JOptionPane;
-
+import java.util.Date;
 /**
  *
  * @author Aniket
@@ -20,6 +22,7 @@ public class AddEmployee extends javax.swing.JFrame {
         setTitle("Admin | Add Employee");
         setLocation(350,250);
         initComponents();
+        datePicker.setDate(new Date());
     }
 
     /**
@@ -42,7 +45,6 @@ public class AddEmployee extends javax.swing.JFrame {
         ID = new javax.swing.JLabel();
         AddButton = new javax.swing.JButton();
         NameField = new javax.swing.JTextField();
-        DOBField = new javax.swing.JTextField();
         SalaryField = new javax.swing.JTextField();
         PhoneField = new javax.swing.JTextField();
         IDField = new javax.swing.JTextField();
@@ -50,6 +52,7 @@ public class AddEmployee extends javax.swing.JFrame {
         GenderFemale = new javax.swing.JRadioButton();
         JobField = new javax.swing.JComboBox<>();
         CancelButton = new javax.swing.JButton();
+        datePicker = new com.toedter.calendar.JDateChooser();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -81,8 +84,6 @@ public class AddEmployee extends javax.swing.JFrame {
         });
 
         NameField.setColumns(10);
-
-        DOBField.setColumns(10);
 
         SalaryField.setColumns(10);
 
@@ -126,18 +127,17 @@ public class AddEmployee extends javax.swing.JFrame {
                             .addComponent(Job))
                         .addGap(34, 34, 34)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(JobField, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addComponent(IDField, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 148, Short.MAX_VALUE)
-                                .addComponent(PhoneField, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(SalaryField, javax.swing.GroupLayout.Alignment.LEADING))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(GenderMale, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(GenderFemale, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(NameField, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(datePicker, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addComponent(NameField, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 146, Short.MAX_VALUE)
-                                .addComponent(DOBField, javax.swing.GroupLayout.Alignment.LEADING))))
+                                .addComponent(JobField, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(IDField, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 148, Short.MAX_VALUE)
+                                .addComponent(PhoneField, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(SalaryField, javax.swing.GroupLayout.Alignment.LEADING))))
                     .addComponent(Name)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(AddButton, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -167,10 +167,10 @@ public class AddEmployee extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(DOB)
-                            .addComponent(DOBField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(20, 20, 20)
+                            .addComponent(datePicker, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(17, 17, 17)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(Gender)
                             .addComponent(GenderMale)
@@ -205,7 +205,11 @@ public class AddEmployee extends javax.swing.JFrame {
     private void AddButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddButtonActionPerformed
         // TODO add your handling code here:
         String name = NameField.getText();
-        String dob = DOBField.getText();
+        
+        DateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy"); 
+        Date date = datePicker.getDate();
+        String dob = dateFormat.format(date);
+        
         String sal = SalaryField.getText();
         String phno = PhoneField.getText();
         String id = IDField.getText();
@@ -280,7 +284,6 @@ public class AddEmployee extends javax.swing.JFrame {
     private javax.swing.JLabel AddLabel;
     private javax.swing.JButton CancelButton;
     private javax.swing.JLabel DOB;
-    private javax.swing.JTextField DOBField;
     private javax.swing.JLabel Gender;
     private javax.swing.JRadioButton GenderFemale;
     private javax.swing.JRadioButton GenderMale;
@@ -295,6 +298,7 @@ public class AddEmployee extends javax.swing.JFrame {
     private javax.swing.JLabel Picture;
     private javax.swing.JLabel Salary;
     private javax.swing.JTextField SalaryField;
+    private com.toedter.calendar.JDateChooser datePicker;
     // End of variables declaration//GEN-END:variables
 
     private boolean validateData(String name,String dob,String id) {

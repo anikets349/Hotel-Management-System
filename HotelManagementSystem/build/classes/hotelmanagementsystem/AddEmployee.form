@@ -37,20 +37,18 @@
                       </Group>
                       <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="JobField" alignment="0" min="-2" pref="106" max="-2" attributes="0"/>
-                          <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
-                              <Component id="IDField" alignment="0" pref="148" max="32767" attributes="0"/>
-                              <Component id="PhoneField" alignment="0" max="32767" attributes="0"/>
-                              <Component id="SalaryField" alignment="0" max="32767" attributes="0"/>
-                          </Group>
                           <Group type="102" attributes="0">
                               <Component id="GenderMale" min="-2" pref="93" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="GenderFemale" min="-2" pref="93" max="-2" attributes="0"/>
                           </Group>
+                          <Component id="NameField" alignment="0" min="-2" pref="146" max="-2" attributes="0"/>
+                          <Component id="datePicker" min="-2" pref="150" max="-2" attributes="0"/>
                           <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
-                              <Component id="NameField" alignment="0" pref="146" max="32767" attributes="0"/>
-                              <Component id="DOBField" alignment="0" max="32767" attributes="0"/>
+                              <Component id="JobField" alignment="0" max="32767" attributes="0"/>
+                              <Component id="IDField" alignment="0" pref="148" max="32767" attributes="0"/>
+                              <Component id="PhoneField" alignment="0" max="32767" attributes="0"/>
+                              <Component id="SalaryField" alignment="0" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
@@ -94,11 +92,11 @@
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="DOB" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="DOBField" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="DOB" min="-2" max="-2" attributes="0"/>
+                          <Component id="datePicker" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="Gender" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="GenderMale" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -204,11 +202,6 @@
         <Property name="columns" type="int" value="10"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="DOBField">
-      <Properties>
-        <Property name="columns" type="int" value="10"/>
-      </Properties>
-    </Component>
     <Component class="javax.swing.JTextField" name="SalaryField">
       <Properties>
         <Property name="columns" type="int" value="10"/>
@@ -264,6 +257,8 @@
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CancelButtonActionPerformed"/>
       </Events>
+    </Component>
+    <Component class="com.toedter.calendar.JDateChooser" name="datePicker">
     </Component>
   </SubComponents>
 </Form>

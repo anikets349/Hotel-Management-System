@@ -23,6 +23,7 @@ public class NewCustomer extends javax.swing.JFrame {
     public NewCustomer() {
         setTitle("Reception | Add New Customer");
         initComponents();
+        datePicker.setDate(new Date());
         GenderGrp.add(MaleRBtn);
         GenderGrp.add(FemaleRBtn);
         updateRoomNumbers();
