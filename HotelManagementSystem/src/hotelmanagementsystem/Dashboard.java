@@ -30,6 +30,7 @@ public class Dashboard extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
+        Logo = new javax.swing.JLabel();
         Background = new javax.swing.JLabel();
         MenuBar = new javax.swing.JMenuBar();
         Menu1 = new javax.swing.JMenu();
@@ -40,11 +41,15 @@ public class Dashboard extends javax.swing.JFrame {
         jMenuItem1 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBounds(new java.awt.Rectangle(250, 100, 600, 400));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 48)); // NOI18N
         jLabel1.setText("The Majestic Residency");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 0, -1, -1));
+
+        Logo.setIcon(new javax.swing.ImageIcon("D:\\New folder\\4th Sem\\DBMS\\Course Project\\HotelManagementSystem\\src\\hotelmanagementsystem\\img\\logo-1.png")); // NOI18N
+        getContentPane().add(Logo, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 40, 400, 400));
 
         Background.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
         Background.setIcon(new javax.swing.ImageIcon("D:\\New folder\\4th Sem\\DBMS\\Course Project\\HotelManagementSystem\\src\\hotelmanagementsystem\\img\\dashboard.jpg")); // NOI18N
@@ -166,6 +171,7 @@ public class Dashboard extends javax.swing.JFrame {
     private javax.swing.JMenuItem AddEmployee;
     private javax.swing.JMenuItem AddRoom;
     private javax.swing.JLabel Background;
+    private javax.swing.JLabel Logo;
     private javax.swing.JMenu Menu1;
     private javax.swing.JMenuItem Menu1Item1;
     private javax.swing.JMenu Menu2;

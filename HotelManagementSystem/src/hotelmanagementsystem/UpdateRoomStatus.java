@@ -24,7 +24,7 @@ public class UpdateRoomStatus extends javax.swing.JFrame {
         avlCombo.setEnabled(false);
         clStCombo.setEnabled(false);
         try{
-            String query = "select * from c##aniket.ROOMC";
+            String query = "select * from c##aniket.ROOMC order by ROOM_NO";
             Conn con = new Conn();
             ResultSet rs = con.stm.executeQuery(query);
             while(rs.next()){

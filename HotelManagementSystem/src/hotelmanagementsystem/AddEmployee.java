@@ -55,6 +55,7 @@ public class AddEmployee extends javax.swing.JFrame {
         datePicker = new com.toedter.calendar.JDateChooser();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setBackground(new java.awt.Color(255, 204, 204));
 
         AddLabel.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         AddLabel.setText("Add an Employee");

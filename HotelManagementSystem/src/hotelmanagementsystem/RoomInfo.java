@@ -24,7 +24,7 @@ public class RoomInfo extends javax.swing.JFrame {
         initComponents();
         try{
             Conn con = new Conn();
-            String query = "select * from c##aniket.ROOMC";
+            String query = "select * from c##aniket.ROOMC order by ROOM_NO";
             ResultSet r = con.stm.executeQuery(query);
             RoomTable.setModel(DbUtils.resultSetToTableModel(r));
         }

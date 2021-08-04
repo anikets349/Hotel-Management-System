@@ -25,6 +25,7 @@ public class CheckOut extends javax.swing.JFrame {
         setLocation(350,250);
         initComponents();
         cout.setDate(new Date());
+        //amtPayable.setEnabled(false);
         try{
             Conn c = new Conn();
             ResultSet rs = c.stm.executeQuery("select * from c##aniket.CUSTOMERC where not exists (select * from c##aniket.BOOKINGC where ID_NO=CustID)");

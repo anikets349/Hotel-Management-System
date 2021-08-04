@@ -24,7 +24,7 @@ public class CustomerInfo extends javax.swing.JFrame {
         initComponents();
         try{
             Conn con = new Conn();
-            String query = "select * from c##aniket.CUSTOMERC";
+            String query = "select * from c##aniket.CUSTOMERC where not exists (select * from c##aniket.BOOKINGC where ID_No=CustID)";
             ResultSet r = con.stm.executeQuery(query);
             Customer.setModel(DbUtils.resultSetToTableModel(r));
         }

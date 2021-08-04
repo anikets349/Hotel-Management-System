@@ -22,19 +22,24 @@ public class DriverStatus extends javax.swing.JFrame {
         setTitle("Reception | Driver Status");
         setLocation(350,210);
         initComponents();
-        
-        
         try{
             Conn c = new Conn();
             ResultSet rs = c.stm.executeQuery("select * from c##aniket.employeec where job='Driver'");
             while(rs.next()){
                 empID.addItem(rs.getString("EID"));
             }
-            ResultSet rs1 = c.stm.executeQuery("select * from c##aniket.customerc");
+            ResultSet rs1 = c.stm.executeQuery("select * from c##aniket.CUSTOMERC where not exists (select * from c##aniket.BOOKINGC where ID_NO=CustID)");
             while(rs1.next()){
                 custID.addItem(rs1.getString(2));
             }
-        }catch(Exception e){}
+            ResultSet rs2 = c.stm.executeQuery("select * from c##aniket.VEHICLEC");
+            while(rs2.next()){
+                VehicleID.addItem(rs2.getString("VID"));
+            }
+        }
+        catch(Exception e){
+            JOptionPane.showMessageDialog(this, e.getMessage());
+        }
     }
 
     /**
@@ -129,7 +134,6 @@ public class DriverStatus extends javax.swing.JFrame {
         });
         getContentPane().add(ShowDetails, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 90, 100, -1));
 
-        VehicleID.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "501", "502", "503", "504", "505" }));
         getContentPane().add(VehicleID, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 90, 80, -1));
 
         avail.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Yes", "No" }));
