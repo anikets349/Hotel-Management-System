@@ -1,14 +1,30 @@
 DDL Statements:-
+
 SQL> create table LOGIN(Username varchar2(20), Password varchar2(20),
   2  constraint PK_Username primary key(Username));
-Table created.
 
 SQL> create table EMPLOYEEC(EID char(10),Name varchar2(40) not null, DOB date, Gender char, Job varchar2(20),
   2  Salary float, PhoneNum int,
   3  constraint PK_EID primary key(EID));
-Table created.
 
 
 SQL> create table ROOMC(Room_No int, Availability char, Cleaning_Status varchar2(10), Price float, 
   2  Bed_Type varchar2(10), primary key(Room_No));
-Table created.
+
+SQL> create table DEPARTMENTC(Dname varchar2(20), MgrID char(10),
+  2  primary key(Dname),
+  3  constraint FK_Mgr foreign key(MgrID) references EMPLOYEEC(EID));
+
+
+SQL> create table CUSTOMERC(ID_Type varchar2(30), ID_No varchar2(10), Name varchar2(40), Age int,
+  2  Gender char, RoomNo int, CheckIn_Date date, Num_Occupants int, Deposit_Amt int,
+  3  primary key(ID_No),
+  4  constraint FK_RoomNum foreign key(RoomNo) references ROOMC(Room_No));
+
+SQL> create table BOOKINGC(Room_No int, CustID varchar2(20), CheckInDate date, CheckOutDate date,
+2    constraint PK_BRC primary key(Room_No,CustID),
+3    constraint FK_BRoom_No foreign key(Room_No) references ROOMC(Room_No),
+4    constraint FK_BCustID foreign key(CustID) references CUSTOMERC(ID_No));
+
+SQL> create table VEHICLEC(VID int,RegisterNo varchar2(20),Car_Company varchar2(20),
+2    Car_Model varchar2(20),Type varchar2(10),constraint PK_VID primary key(VID));
